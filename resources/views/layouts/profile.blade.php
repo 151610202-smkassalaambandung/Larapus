@@ -1,1 +1,1 @@
-<h1>Nama Saya Ferlan</h1>
+<center><h1>Terima Kasih Atas Kunjungannya</h1></center>
