@@ -8,10 +8,7 @@ class Author extends Model
 {
     //
     protected $fillable =['name'];
-}
-class Author extends Model
-{
- public function books()
+    public function books()
  {
  	return $this->hasMany('App\Book');
  }

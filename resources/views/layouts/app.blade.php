@@ -14,6 +14,9 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="/css/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -45,10 +48,15 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                    @if (Auth::check())
+                        <li><a href="{{ url('/home')}}">Dasboard</a></li>
+                    @endif
+                    @role('admin')
+                      <li><a href="{{ route('authors.index')}}">Penulis</a></li>
+                      @endrole
                     </ul>
-
-                    <!-- Right Side Of Navbar -->
+                        &nbsp;
+                   <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
@@ -79,13 +87,18 @@
                 </div>
             </div>
         </nav>
-
+        @include('layouts._flash')
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     {{-- <script src="{{asset('/js/bootstrap.min.js')}}"></script> --}}
+
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap.min.js"></script>
+@yield('scripts')
+
 
 
 @include('layouts.menu')

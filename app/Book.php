@@ -8,13 +8,10 @@ class Book extends Model
 {
     //
     protected $fillable =['title','author_id','amount'];
-}
-
-class Book extends Model
-{
- public function author()
+     public function author()
  {
  	return $this->belongsTo('App\Author');
  }
 }
+
 
