@@ -7,7 +7,7 @@
  			<ul class="breadcrumb">
  				<li><a href="{{ url('/home')}}">Dasboard</a></li>
  				<li><a href="{{ url('/admin/authors')}}">Penulis</a></li>
- 				<li class="active">Penulis</li>
+ 				<li class="active">Ubah Penulis</li>
  			</ul>
  			<div class="panel panel-default">
  				<div class="panel-heading">

@@ -53,7 +53,13 @@
                     @endif
                     @role('admin')
                       <li><a href="{{ route('authors.index')}}">Penulis</a></li>
+                      <li><a href="{{ route('books.index')}}">Buku</a></li>
+                      <li><a href="{{ route('members.index')}}">Member</a></li>
+                      <li><a href="{{ route('statistics.index')}}">Peminjaman</a></li>
                       @endrole
+                    @if (auth()->check())
+                      <li><a href="{{ url('/settings/profile') }}">Profil</li>
+                    @endif
                     </ul>
                         &nbsp;
                    <!-- Right Side Of Navbar -->
@@ -64,12 +70,13 @@
                             <li><a href="{{ url('/register') }}">Daftar</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">   
+                                   {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ url('/settings/password')}}"><i class="fa fa-btn fa-lock"></i>Ubah Password</a></li>
+                                    
+                                        <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -79,9 +86,12 @@
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
+
                                     </li>
-                                </ul>
+                                  </ul>
+                            
                             </li>
+
                         @endif
                     </ul>
                 </div>
@@ -97,6 +107,7 @@
 
     <script src="/js/jquery.dataTables.min.js"></script>
     <script src="/js/dataTables.bootstrap.min.js"></script>
+    <script src="{{asset('/js/custom.js')}}"></script>
 @yield('scripts')
 
 

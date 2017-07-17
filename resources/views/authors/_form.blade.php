@@ -5,6 +5,7 @@
 		{!! $errors->first('name','<p class="help-block">:message</p>')!!}
 	</div>
 </div>
+
 <div class="form-group">
 	<div class="col-md-4 col-md-offset-2">
 		{!! Form::submit('Simpan',['class'=>'btn btn-primary'])!!}

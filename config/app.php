@@ -181,6 +181,10 @@ return [
         Laratrust\LaratrustServiceProvider::class,
         //add on
         Yajra\Datatables\DatatablesServiceProvider::class,
+        //add on
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+
+
 
     ],
 
