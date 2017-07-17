@@ -27,7 +27,7 @@
   <script>
   	$(function() {
   		$('\
-  			<div id="filter_status" class="dataTables_length" style="display: inline-block; margin-left:10px;">\
+  			<div id="filter_status" class="dataTables_length" style="display:\ inline-block; margin-left:10px;">\
   			<label>Status\
             <select size="1" name="filter_status" aria-controls="filter_status"  class="form-control input-sm" style="width: 140px;">\
             <option value="all" selected="selected">Semua</option>\
@@ -37,7 +37,7 @@
             </label>\
             </div>\
   			').insertAfter('.dataTables_length');
-  		       $("#dataTableBuilder").on('pre.Xhr.dt', function(e, settings, data) {
+  		       $("#dataTableBuilder").on('preXhr.dt', function(e, settings, data) {
   		       	data.status = $('select[name="filter_status"]').val();
   		       });
 
